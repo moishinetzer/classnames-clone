@@ -1,0 +1,11 @@
+{
+  "name": "classnames-clone",
+  "version": "1.0.0",
+  "description": "A simple classnames clone created using TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
