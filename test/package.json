@@ -1,0 +1,7 @@
+{
+  "name": "test",
+  "type": "module",
+  "dependencies": {
+    "classnames-clone": "^1.0.0"
+  }
+}
