@@ -3,21 +3,23 @@
   "name": "classnames-clone",
   "version": "1.0.4",
   "description": "A simple classnames clone created using TDD",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "test": "vitest",
-    "prepare": "npm run build",
-    "preversion": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moishinetzer/classnames-clone.git"
+  },
+  "keywords": [],
   "author": "Moishi Netzer <moishinetzer@gmail.com> (https://www.mnetzer.com)",
   "license": "ISC",
-  "devDependencies": {
-    "typescript": "^4.6.3",
-    "vitest": "^0.7.13"
+  "bugs": {
+    "url": "https://github.com/moishinetzer/classnames-clone/issues"
   },
-  "files": [
-    "dist"
-  ]
+  "homepage": "https://github.com/moishinetzer/classnames-clone#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
 }
