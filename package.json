@@ -3,10 +3,21 @@
   "name": "classnames-clone",
   "version": "1.0.0",
   "description": "A simple classnames clone created using TDD",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "node test"
+    "build": "tsc",
+    "test": "vitest",
+    "prepare": "npm run build",
+    "preversion": "npm run build"
   },
   "author": "Moishi Netzer <moishinetzer@gmail.com> (https://www.mnetzer.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.3",
+    "vitest": "^0.7.13"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
