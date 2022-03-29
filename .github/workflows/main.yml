@@ -2,7 +2,7 @@ name: CI
 on: [push]
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build, lint, and test on Node ${{ matrix.node }} and Ubuntu
 
     runs-on: ubuntu-latest
     strategy:
@@ -32,7 +32,7 @@ jobs:
 
 
   build-windows:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Build, lint, and test on Node ${{ matrix.node }} and Windows
     runs-on: windows-latest
     strategy:
       matrix:
