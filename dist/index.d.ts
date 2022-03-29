@@ -1,1 +1,5 @@
-export declare const sum: (a: number, b: number) => number;
+declare type ClassNames = string | {
+    [key: string]: boolean;
+};
+export declare const classNames: (...items: Array<ClassNames>) => string;
+export {};
