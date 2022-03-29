@@ -30,4 +30,21 @@ describe('blah', () => {
       classNames('foo', { bar: true, duck: false }, 'baz', { quux: true })
     ).toEqual('foo bar baz quux');
   });
+
+  it('Recursively flattens Arrays', () => {
+    let arr = ['b', { c: true, d: false }];
+    expect(classNames('a', arr)).toEqual('a b c');
+  });
+
+  it('Parses dynamic class names', () => {
+    let buttonType = 'primary';
+    let obj = { [`btn-${buttonType}`]: true };
+    expect(classNames(obj)).toEqual('btn-primary');
+  });
+
+  // To be implemented
+  it.skip('Removes dupes if one is false', () => {
+    expect(classNames('foo', 'foo', 'bar')).toEqual('foo bar');
+    expect(classNames('foo', { foo: false, bar: true })).toEqual('bar');
+  });
 });
