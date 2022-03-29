@@ -1,25 +1,54 @@
 {
-  "type": "module",
-  "name": "classnames-clone",
-  "version": "1.0.5",
-  "description": "A simple classnames clone created using TDD",
-  "main": "index.js",
+  "version": "1.6.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moishinetzer/classnames-clone.git"
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
-  "keywords": [],
-  "author": "Moishi Netzer <moishinetzer@gmail.com> (https://www.mnetzer.com)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/moishinetzer/classnames-clone/issues"
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
-  "homepage": "https://github.com/moishinetzer/classnames-clone#readme",
+  "name": "classnames-clone",
+  "author": "Moishi Netzer",
+  "module": "dist/classnames-clone.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/classnames-clone.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/classnames-clone.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "devDependencies": {
-    "typescript": "^4.6.3"
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "husky": "^7.0.4",
+    "size-limit": "^7.0.8",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^3.9.10"
   }
 }
