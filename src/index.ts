@@ -3,7 +3,7 @@ type classNames = string | { [key: string]: boolean } | classNames[];
 export const classNames = (...items: Array<classNames>) => {
   let string: string[] = [];
   items.forEach(item => {
-    if (typeof item === 'string') {
+    if (typeof item === 'string' && item !== '') {
       string.push(item);
     } else if (Array.isArray(item)) {
       // If it's an array of class names, flatten them out
@@ -17,5 +17,5 @@ export const classNames = (...items: Array<classNames>) => {
     }
   });
 
-  return string.join(' ');
+  return string.filter(_ => _ !== '').join(' ');
 };

@@ -47,4 +47,53 @@ describe('blah', () => {
     expect(classNames('foo', 'foo', 'bar')).toEqual('foo bar');
     expect(classNames('foo', { foo: false, bar: true })).toEqual('bar');
   });
+
+  it('Supports heterogenous arguments', function() {
+    expect(classNames({ a: true }, 'b')).toEqual('a b');
+  });
+
+  it('Should be trimmed', function() {
+    expect(classNames('', 'b', {}, '')).toEqual('b');
+  });
+
+  it('Returns an empty string for an empty configuration', function() {
+    expect(classNames({})).toEqual('');
+  });
+
+  it('Supports an array of class names', function() {
+    expect(classNames(['a', 'b'])).toEqual('a b');
+  });
+
+  it('Joins array arguments with string arguments', function() {
+    expect(classNames(['a', 'b'], 'c')).toEqual('a b c');
+    expect(classNames('c', ['a', 'b'])).toEqual('c a b');
+  });
+
+  it('Handles multiple array arguments', function() {
+    expect(classNames(['a', 'b'], ['c', 'd'])).toEqual('a b c d');
+  });
+
+  it('Handles arrays that include falsy and true values', function() {
+    expect(classNames(['a', 'b'])).toEqual('a b');
+  });
+
+  it('Handles arrays that include arrays', function() {
+    expect(classNames(['a', ['b', 'c']])).toEqual('a b c');
+  });
+
+  it('Handles arrays that include objects', function() {
+    expect(classNames(['a', { b: true, c: false }])).toEqual('a b');
+  });
+
+  it('Handles deep array recursion', function() {
+    expect(classNames(['a', ['b', ['c', { d: true }]]])).toEqual('a b c d');
+  });
+
+  it('Handles arrays that are empty', function() {
+    expect(classNames('a', [])).toEqual('a');
+  });
+
+  it('Handles nested arrays that have empty nested arrays', function() {
+    expect(classNames('a', [[]])).toEqual('a');
+  });
 });
