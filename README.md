@@ -2,7 +2,7 @@
 > Created for fun, using the latest technologies that make it tiny and pretty fast
 ### Not Another Clone 🥱
 
-- Blazingly Fast⚡
+- Blazing Fast⚡
 - Teensy Small (204B) 🤏
 - Really Easy To Use 👶
 - Completely Type Safe 👷‍♀️
@@ -18,7 +18,7 @@ Ever wanted to conditionally render your classnames? Well before your code used 
 ```js
 <div
   className={
-    `text-2xl italic ${isAcive ? "bg-gray-400" : ""}`
+    `text-2xl italic ${isActive ? "bg-gray-400" : ""}`
   }
 >
   Hmm not the best
@@ -27,10 +27,12 @@ Ever wanted to conditionally render your classnames? Well before your code used 
 
 Now it looks like this:
 ```js
-<div>
+<div
   className={
     classNames('text-2xl italic', {"bg-gray-400" : isActive})
   }
+>
+  Yummy! 🥞
 </div>
 ```
 
@@ -52,7 +54,7 @@ classNames("bg-white", {"text-red-300": false}) // ==> returns "bg-white"
 ```
 
 #### Opinions: 
-The official package for classnames allows numbers in it's type definition, however that doesn't make sense when it comes to writing classes so for this package's purporse that has been left out.
+The official package for classnames allows numbers in it's type definition, however that doesn't make sense when it comes to writing classes so for this package's purpose that has been left out.
 
 Perfect for conditional state class formatting like isActive etc.
 
