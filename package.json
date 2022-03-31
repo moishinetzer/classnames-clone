@@ -61,5 +61,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/moishinetzer/classnames-clone.git"
-  }
+  },
+  "description": "Sweet 🍭 Small 🤏 and Speedy ⚡ ClassNames Clone"
 }
